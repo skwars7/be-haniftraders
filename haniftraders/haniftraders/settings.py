@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'payments',
     'core',
-    'order',
-    'products',
     'rest_framework'
 ]
 
@@ -130,3 +128,10 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOCAL_FILE_DIR = 'static/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',)
+}
